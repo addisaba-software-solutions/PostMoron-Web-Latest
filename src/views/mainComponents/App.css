@@ -1,0 +1,148 @@
+/* #region Default styles */
+
+.App {
+  text-align: center;
+  position: relative;
+}
+
+.App-logo {
+  height: 80px;
+}
+
+/* DEMO STYLES */
+.navs {
+  padding: 30px 0;
+  background-color: #222;
+}
+
+.navs a {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  margin: 0 15px;
+  padding: 10px;
+  border: 1px rgba(255, 255, 255, 0.5) solid;
+  transition: all 0.3s linear;
+  text-decoration: none;
+  color: white;
+}
+
+.navs a.active {
+  background-color: #61DAFB;
+  color: #222;
+}
+
+
+
+/* #endregion */
+/* #region Card */
+/* Card */
+.cards {
+  border: 3px #f3f3f3 solid;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s linear;
+  cursor: pointer;
+  background-color: #f3f3f3;
+  padding: 10px;
+  max-width: 60%;
+  
+  /* max-width: 80%; */
+  text-align: left;
+  margin: 0 auto;
+}
+
+.cards:hover {
+  background-color: #f3f3f3;
+  border-color: #f3f3f3;
+}
+
+.cards img {
+  max-width: calc(100%);
+  margin: 0 auto;
+  display: block;
+}
+
+.cards .index {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  line-height: 20px;
+  font-size: 14px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  padding: 0 10px;
+}
+
+.cards .price {
+  margin: 0;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+.cards .details {
+  position: relative;
+}
+
+.cards .features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cards .features li {
+  padding-left: 24px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.cards .features li span {
+  display: none;
+}
+
+.cards .features li.icon-bed {
+  background: url(../../assets/bed-left-side.svg) left center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.cards .features li.icon-bath {
+  background: url(../../assets/bathtub.svg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.cards .features li.icon-car {
+  background: url(../../assets/car-compact.svg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+/* #endregion */
+/* #region cards slider */
+.cardss-slider-wrapper {
+  display: flex;
+}
+
+.cardss-slider {
+  position: relative;
+  max-width: 226px;
+  margin: 0 auto;
+}
+
+.cardss-slider .cards {
+  flex: 1;
+}
+
+.cardss-slider:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 264px;
+  outline: 5px solid #61DAFB;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* #endregion */
