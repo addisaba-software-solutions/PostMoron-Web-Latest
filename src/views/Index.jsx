@@ -33,12 +33,7 @@ class Index extends React.Component {
             <InfoThird/>
             <InfoFourth/>
            
-
-            
-
-            
           </div>
-          {/* <Footer /> */}
         </div>
       </>
     );

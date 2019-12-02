@@ -112,7 +112,6 @@ class Home extends React.Component {
       })
     }
 
-
     reader.readAsDataURL(event.target.files[0])
   }
   submitLike(post_id) {
@@ -138,9 +137,7 @@ class Home extends React.Component {
       this.props.addComment(post_id, cmt);
       this.props.getAllPosts();
     }
-
   }
-
   profile = (email) => {
     this.props.profile_visit(email);
   }
@@ -160,9 +157,7 @@ class Home extends React.Component {
 
       }
     })
-
   }
-
   post(e) {
     if (this.state.title == '' && this.state.body == '' && this.state.image == '') {
       this.setState({
@@ -181,9 +176,7 @@ class Home extends React.Component {
         body: '',
       })
       this.props.getAllPosts();
-
     }
-
   }
   render() {
 
@@ -224,72 +217,69 @@ class Home extends React.Component {
                           activeTab={"link" + this.state.iconTabs}
                         >
                           <TabPane tabId="link1">
-                          <StyleRoot>
-                            <div className='row' style={{ padding: '2%' }} style={styles.bounce}>
+                            <StyleRoot>
+                              <div className='row' style={{ padding: '2%' }} style={styles.bounce}>
 
-                              {this.state.postError == 1 ?
-                                (<div className='text-danger'>You should Say something to post</div>) : null}
-                              <Input className='col-lg-12 col-md-12 col-sm-12 col-12'
-                                type="text"
-                                placeholder="Title"
-                                name='title'
-                                value={this.state.title}
-                                onChange={this.handleChange}
-                                style={{ background: '#fff', marginBottom: '5px', color: '#111', fontWeight: 'bold' }}
+                                {this.state.postError == 1 ?
+                                  (<div className='text-danger'>You should Say something to post</div>) : null}
+                                <Input className='col-lg-12 col-md-12 col-sm-12 col-12'
+                                  type="text"
+                                  placeholder="Title"
+                                  name='title'
+                                  value={this.state.title}
+                                  onChange={this.handleChange}
+                                  style={{ background: '#fff', marginBottom: '5px', color: '#111', fontWeight: 'bold' }}
 
-                              ></Input>
-                              <textarea
+                                ></Input>
+                                <textarea
 
-                                className="post-txt"
-                                placeholder="Body"
-                                style={{ padding: '5px' }}
-                                name='body'
-                                value={this.state.body}
-                                onChange={this.handleChange}
-                                className='col-lg-12 col-md-12 col-sm-12 col-12'
-                                rows="4"
-                              ></textarea>
-                              <div className='row'>
+                                  className="post-txt"
+                                  placeholder="Body"
+                                  style={{ padding: '5px' }}
+                                  name='body'
+                                  value={this.state.body}
+                                  onChange={this.handleChange}
+                                  className='col-lg-12 col-md-12 col-sm-12 col-12'
+                                  rows="4"
+                                ></textarea>
+                                <div className='row'>
 
-                                <div className='col-lg-7'>
-                                  <label for="file">
-                                    <span className='col-lg-5'
-                                      className="btn btn-info shadow  btn-circle btn-xl" style={{ height: '60px', width: '60px' }}>
-                                      <i className="fa fa-camera glypicon_color faa-tada animated"></i>
-                                    </span>
-                                  </label>
-                                  <input type="file" id="file" style={{ display: 'none' }} onChange={this.fileChangedHandler} />
-                                </div>
-                              </div>
-                              {this.state.selectedFile ? (
-                                <div className='col-lg-5'>
-                                  <div style={{ height: '150px', width: '200px' }}>
-                                    <img src={this.state.imagePreviewUrl}
-                                      class="post_img "
-
-                                      alt=""
-                                    />
+                                  <div className='col-lg-7'>
+                                    <label for="file">
+                                      <span className='col-lg-5'
+                                        className="btn btn-info shadow  btn-circle btn-xl" style={{ height: '60px', width: '60px' }}>
+                                        <i className="fa fa-camera glypicon_color faa-tada animated"></i>
+                                      </span>
+                                    </label>
+                                    <input type="file" id="file" style={{ display: 'none' }} onChange={this.fileChangedHandler} />
                                   </div>
                                 </div>
-                              ) : null
-                              }
+                                {this.state.selectedFile ? (
+                                  <div className='col-lg-5'>
+                                    <div style={{ height: '150px', width: '200px' }}>
+                                      <img src={this.state.imagePreviewUrl}
+                                        class="post_img "
+
+                                        alt=""
+                                      />
+                                    </div>
+                                  </div>
+                                ) : null
+                                }
 
 
+                              </div>
+                              <div className='text-right'>
 
-                            </div>
-
-
-                            <div className='text-right'>
-
-                              <Button
-                                className="btn-round"
-                                color="primary"
-                                type="button"
-                                onClick={this.post.bind(this)}
-                              >
-                                Post
+                                <Button
+                                  className="btn-round"
+                                  color="primary"
+                                  type="button"
+                                  onClick={this.post.bind(this)}
+                                >
+                                  Post
                           </Button></div>
-                          </StyleRoot>
+                            </StyleRoot>
                           </TabPane>
                           <TabPane tabId="link2">
                             <Input
@@ -314,12 +304,8 @@ class Home extends React.Component {
                     <CardFooter></CardFooter>
                   </Card>
                   <div className="maxscroll">
-
-
                     {
-
                       this.props.posts.map(post => {
-
                         return (
                           <Card>
                             <CardHeader>
@@ -352,7 +338,6 @@ class Home extends React.Component {
                                     </div>
 
                                   </div>
-
                                 </div>
                                 <div>
                                   <UncontrolledDropdown>
@@ -394,14 +379,12 @@ class Home extends React.Component {
                             </CardHeader>
                             <CardBody >
                               <div className="text-muted h7 mb-2">
-
                                 <i className="fa fa-clock-o"></i>{post.created_at}
                               </div>
                               {
                                 post.shared_from ? (
                                   <div style={{ padding: '5px' }}>
                                     <span style={{ fontSize: '17px' }} className='text-success'>Post shared From </span>
-
                                     <Link
                                       onClick={() => this.profile(post.shared_from)}
                                       to={{
@@ -414,7 +397,6 @@ class Home extends React.Component {
                                   </div>
                                 ) : null
                               }
-
 
                               <a className="card-link" href="#b">
                                 <h4 className="card-title">
@@ -436,7 +418,6 @@ class Home extends React.Component {
                                   ) : null
 
                               }
-
 
                             </CardBody>
                             <CardFooter>
@@ -558,8 +539,6 @@ class Home extends React.Component {
                       })
                     }
 
-
-
                   </div>
                 </Col>
                 {
@@ -577,7 +556,6 @@ class Home extends React.Component {
                                       to={{
                                         pathname: '/pro-page',
                                         visited: data.email,
-
                                       }}
                                     >
                                       <img
@@ -585,7 +563,6 @@ class Home extends React.Component {
                                         src={URL + data.image}
                                         alt="User"
                                       />
-
                                     </Link>
 
                                   </div>

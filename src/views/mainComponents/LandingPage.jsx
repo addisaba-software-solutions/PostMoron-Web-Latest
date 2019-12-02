@@ -16,11 +16,8 @@ import {
   Row,
   Col
 } from "reactstrap";
-
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.jsx";
-
-
 import bigChartData from "variables/charts.jsx";
 
 class LandingPage extends React.Component {
